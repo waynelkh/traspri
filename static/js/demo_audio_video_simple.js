@@ -6,7 +6,7 @@ var selfEasyrtcid = "";
 
 
 function connect() {
-    easyrtc.setVideoDims(400,300);
+    // easyrtc.setVideoDims(400,300);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
     console.log("Connect to the easyRTC...");
@@ -14,12 +14,12 @@ function connect() {
 
 
 function clearConnectList() {
-    
+
     var otherClientDiv = document.getElementById('otherClients');
     while (otherClientDiv.hasChildNodes()) {
         otherClientDiv.removeChild(otherClientDiv.lastChild);
     }
-    
+
     //console.log("on clearConnectList");
 }
 

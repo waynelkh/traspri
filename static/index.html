@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bikin - HTML Bootstrap Template</title>
+    <title>Traspri</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,9 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/overwrite.css">
 	<link href="css/animate.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="/easyrtc/easyrtc.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
 
     <!--show-->
     <!-- Assumes global locations for socket.io.js and easyrtc.js -->
@@ -142,21 +144,7 @@
 			</div> <!--/#carousel-slider-->
 		</div><!--/#about-slider-->
 	</div><!--/#slider-->
-    <div id="feature">
-        <div class="container">
-            Test...<Button onclick="connect()">Connect</Button>
-            <div id="otherClients"></div>            
-            <div id="myRTCid"></div>
-            <div id="videos">
-                <video autoplay="autoplay" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
-                <div style="position:relative;float:left;">
-                    <video autoplay="autoplay" id="callerVideo"></video>
-                </div>
-                <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
-            </div><!--videos-->
-        </div>
-    </div>
-<!--
+
 	<div id="feature">
 		<div class="container">
 			<div class="row">
@@ -164,7 +152,8 @@
 					<h3>Features</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit<br>amet consectetur adipisicing elit</p>
 				</div>
-				<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+				<!-- <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+
 					<div class="text-center">
 						<div class="hi-icon-wrap hi-icon-effect">
 							<i class="fa fa-laptop"></i>
@@ -173,37 +162,44 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
-					<div class="text-center">
+				 -->
+                 <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+					<div style="background-color: red;">
 						<div class="hi-icon-wrap hi-icon-effect">
 							<i class="fa fa-heart-o"></i>
 							<h2>Retina Ready</h2>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                            <div id="otherClients"></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.3s">
-					<div class="text-center">
-						<div class="hi-icon-wrap hi-icon-effect">
-							<i class="fa fa-cloud"></i>
-							<h2>Easily Customize</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.3s">
-					<div class="text-center">
-						<div class="hi-icon-wrap hi-icon-effect">
-							<i class="fa fa-camera"></i>
-							<h2>Quality Code</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-						</div>
-					</div>
-				</div>
+                <div class="col-md-6 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+                    <div style="background-color: blue;">
+                        <div class="hi-icon-wrap hi-icon-effect">
+                            <h2>Guest</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                            <Button onclick="connect()">Connect</Button>
+                            <div >
+                                <video autoplay="autoplay" class="live-video" id="callerVideo"></video>
+                            </div>
+                            <div id="myRTCid"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+                    <div style="background-color: green;">
+                    <video autoplay="autoplay" class="easyrtcMirror live-video" id="selfVideo" muted="muted" volume="0" />
+                        <div class="hi-icon-wrap hi-icon-effect">
+                            <h2>Retina Ready</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                            <div id="otherClients"></div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
-	</div> 
--->
+	</div>
+
 	<div id="gallery">
 		<div class="container">
 			<div class="text-center">
@@ -582,6 +578,6 @@
 	<script src="js/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="js/fliplightbox.min.js"></script>
 	<script src="js/functions.js"></script>
-    <script src="traspri.html"></script>
+    <script src="traspri.js"></script>
   </body>
 </html>
