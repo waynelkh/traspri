@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Traspri</title>
 
     <!-- Bootstrap -->
@@ -12,18 +11,15 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/overwrite.css">
-	<link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="/easyrtc/easyrtc.css" rel="stylesheet" />
-    <link href="css/custom.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/easyrtc/easyrtc.css" />
+    <link rel="stylesheet" href="css/custom.css" />
 
-    <!--show-->
-    <!-- Assumes global locations for socket.io.js and easyrtc.js -->
+    <!-- script -->
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
     <script type="text/javascript" src="js/demo_audio_video_simple.js"></script>
-
-
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +38,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Traspri</a>
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                            <img src="img/logo.png" height="65" width="69">
+                            Traspri
+                        </span>
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -80,10 +81,7 @@
 							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
 								<form class="form-inline">
 									<div class="form-group">
-										<button type="livedemo" name="Live Demo" class="btn btn-primary btn-lg" required="required">Live Demo</button>
-									</div>
-									<div class="form-group">
-										<button type="getnow" name="Get Now" class="btn btn-primary btn-lg" required="required">Get Now</button>
+										<button type="livedemo" name="LiveDemo" class="btn btn-primary btn-lg">Live Demo</button>
 									</div>
 								</form>
 							</div>
@@ -150,52 +148,9 @@
 			<div class="row">
 				<div class="text-center">
 					<h3>Features</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit<br>amet consectetur adipisicing elit</p>
+                    <p>Real-time translate the voice to captions without any plugins</p>
+                    <p>Say the traslation language immediately</p>
 				</div>
-				<!-- <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
-
-					<div class="text-center">
-						<div class="hi-icon-wrap hi-icon-effect">
-							<i class="fa fa-laptop"></i>
-							<h2>Fully Responsive</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-						</div>
-					</div>
-				</div>
-				 -->
-                 <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
-					<div style="background-color: red;">
-						<div class="hi-icon-wrap hi-icon-effect">
-							<i class="fa fa-heart-o"></i>
-							<h2>Retina Ready</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-                            <div id="otherClients"></div>
-						</div>
-					</div>
-				</div>
-                <div class="col-md-6 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
-                    <div style="background-color: blue;">
-                        <div class="hi-icon-wrap hi-icon-effect">
-                            <h2>Guest</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-                            <Button onclick="connect()">Connect</Button>
-                            <div >
-                                <video autoplay="autoplay" class="live-video" id="callerVideo"></video>
-                            </div>
-                            <div id="myRTCid"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
-                    <div style="background-color: green;">
-                    <video autoplay="autoplay" class="easyrtcMirror live-video" id="selfVideo" muted="muted" volume="0" />
-                        <div class="hi-icon-wrap hi-icon-effect">
-                            <h2>Retina Ready</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-                            <div id="otherClients"></div>
-                        </div>
-                    </div>
-                </div>
 			</div>
 		</div>
 	</div>
@@ -207,67 +162,52 @@
 				<p>Let we try to traslation realtime with streamming</p>
 			</div>
 			<div class="row">
-				<figure class="effect-chico">
-					<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-						<a href="img/work/1.jpg" class="flipLightBox">
-						<img src="img/work/1.jpg" class="img-responsive" alt="">
-						</a>
-					</div>
-				</figure>
-				<figure class="effect-chico">
-					<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-						<a href="img/work/2.jpg" class="flipLightBox">
-						<img src="img/work/2.jpg" class="img-responsive" alt="">
-						</a>
-					</div>
-				</figure>
-				<figure class="effect-chico">
-					<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-						<a href="img/work/3.jpg" class="flipLightBox">
-						<img src="img/work/3.jpg" class="img-responsive" alt="">
-						</a>
-					</div>
-				</figure>
-				<figure class="effect-chico">
-					<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-						<a href="img/work/4.jpg" class="flipLightBox">
-						<img src="img/work/4.jpg" class="img-responsive" alt="">
-						</a>
-					</div>
-				</figure>
+                 <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Who is Online</div>
+                      <div class="panel-body">
+                        <div class="list-group" id="online-list">
+                          <a href="#" class="list-group-item">上線清單</a>
+                        </div>
+
+                        <div id="otherClients"></div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+                    <div class="hi-icon-wrap hi-icon-effect">
+                        <h2>Guest</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                        <Button onclick="connect()">Connect</Button>
+                        <div >
+                            <video autoplay="autoplay" class="live-video" id="callerVideo"></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
+                        <div id="myRTCid"></div>
+                        <video autoplay="autoplay" class="easyrtcMirror live-video" id="selfVideo" muted="muted" volume="0"></video>
+
+                        <div class="form-group">
+                        <label for="select_language">Language</label>
+                            <select id="select_language" class="form-control" onchange="updateCountry()">
+                            </select>
+                            <select id="select_dialect" class="form-control">
+                            </select>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" value="true">
+                            Speak!
+                            </label>
+                        </div>
+                </div>
 			</div>
 		</div>
 		<div class="gallery">
 			<div class="container">
 				<div class="row">
-					<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/work/5.jpg" class="flipLightBox">
-							<img src="img/work/5.jpg" class="img-responsive" alt="">
-							</a>
-						</div>
-					</figure>
-					<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/work/6.jpg" class="flipLightBox">
-							<img src="img/work/6.jpg" class="img-responsive" alt="">
-							</a>
-						</div>
-					</figure>
-					<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/work/7.jpg" class="flipLightBox">
-							<img src="img/work/7.jpg" class="img-responsive" alt="">
-							</a>
-						</div>
-					</figure>
-					<figure class="effect-chico">
-						<div class="col-md-3 wow fadeInDown" data-wow-offset="0" data-wow-delay="0.3s">
-							<a href="img/work/8.jpg" class="flipLightBox">
-							<img src="img/work/8.jpg" class="img-responsive" alt="">
-							</a>
-						</div>
-					</figure>
+
 				</div>
 			</div>
 		</div>
@@ -447,8 +387,8 @@
 			<div class="row">
 				<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
-						<img src="https://graph.facebook.com/guangyu.zheng/picture?width=182&height=182" alt="">
-						<h2>John Doe</h2>
+						<img src="https://graph.facebook.com/guangyu.zheng/picture?width=182&height=182" alt="avatar">
+						<h2>gyzheng</h2>
 						<h4>Founder & CEO</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
 					</div>
@@ -456,7 +396,7 @@
 				<div class="col-md-3 wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="text-center">
 						<img src="https://graph.facebook.com/waynelkh/picture?width=182&height=182" alt="avatar">
-						<h2>John Doe</h2>
+						<h2>wnlee</h2>
 						<h4>Creative Director</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
 					</div>
@@ -464,15 +404,15 @@
 				<div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
                     <div class="text-center">
                         <img src="https://graph.facebook.com/zespre/picture?width=182&height=182" alt="">
-                        <h2>John Smith</h2>
+                        <h2>chihhsin</h2>
                         <h4>Creative Director</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
                     </div>
                 </div>
                 <div class="col-md-3 wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
                     <div class="text-center">
-                        <img src="https://graph.facebook.com/mark.chen.7121/picture?width=182&height=182" alt="">
-                        <h2>John Smith</h2>
+                        <img src="https://graph.facebook.com/mark.chen.7121/picture?width=182&height=182" alt="avatar">
+                        <h2>yawchen</h2>
                         <h4>Creative Director</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Fusce fermen tum neque a rutrum varius</p>
                     </div>

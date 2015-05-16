@@ -15,30 +15,30 @@ function connect() {
 
 function clearConnectList() {
 
-    var otherClientDiv = document.getElementById('otherClients');
-    while (otherClientDiv.hasChildNodes()) {
-        otherClientDiv.removeChild(otherClientDiv.lastChild);
+    var otherClientsA = document.getElementById('online-list');
+    while (otherClientsA.hasChildNodes()) {
+        otherClientsA.removeChild(otherClientsA.lastChild);
     }
-
-    //console.log("on clearConnectList");
 }
 
 
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
-    var otherClientDiv = document.getElementById('otherClients');
+
+    var otherClientsA = document.getElementById('online-list');
     for(var easyrtcid in data) {
-        var button = document.createElement('button');
-        button.onclick = function(easyrtcid) {
+        var onlineLink = document.createElement('a');
+        onlineLink.className = "list-group-item";
+        onlineLink.setAttribute('href', '#key=' + easyrtcid);
+        onlineLink.text = easyrtcid;
+        onlineLink.onclick = function(easyrtcid) {
             return function() {
                 performCall(easyrtcid);
             };
         }(easyrtcid);
-
-        var label = document.createTextNode(easyrtc.idToName(easyrtcid));
-        button.appendChild(label);
-        otherClientDiv.appendChild(button);
+        otherClientsA.appendChild(onlineLink);
     }
+
 }
 
 
@@ -54,7 +54,7 @@ function performCall(otherEasyrtcid) {
 
 function loginSuccess(easyrtcid) {
     selfEasyrtcid = easyrtcid;
-    document.getElementById("myRTCid").innerHTML = "I am " + easyrtc.cleanId(easyrtcid);
+    document.getElementById("myRTCid").innerHTML = "My Id is " + easyrtc.cleanId(easyrtcid);
 }
 
 
