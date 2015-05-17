@@ -16,7 +16,7 @@ function connect() {
             targetId = id;
         }else{
             traslation('zh-CHT', 'en', data, function(td){
-                document.getElementById('subtitle').innerHTML += td . '. ';
+                document.getElementById('subtitle').innerHTML += td + '. ';
                 say(td);
             });
         }
