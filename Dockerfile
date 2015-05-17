@@ -7,8 +7,11 @@ RUN     yum install -y npm
 
 # Bundle app source
 COPY . /src
+WORKDIR /src
 # Install app dependencies
-RUN cd /src; npm install
+RUN npm install
+# Patch
+RUN mv node_modules/bingtranslator/lib/getadmtoken.js node_modules/bingtranslator/lib/getAdmToken.js
 
 EXPOSE  8080
 CMD ["node", "/src/server.js"]
