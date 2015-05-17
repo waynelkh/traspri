@@ -18,8 +18,8 @@
 
     <!-- script -->
     <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
     <script type="text/javascript" src="js/speech.js"></script>
+    <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
     <script type="text/javascript" src="js/demo_audio_video_simple.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -176,9 +176,13 @@
                 <div class="col-md-6 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
                     <div class="hi-icon-wrap hi-icon-effect">
                         <h2>Guest</h2>
-                        <Button onclick="connect()">Connect</Button>
+                        <Button onClick="connect()">Connect</Button>
+                        <Button onClick="test()">test</Button>
                         <div >
                             <video autoplay="autoplay" class="live-video" id="callerVideo"></video>
+                        </div>
+                        <div class="subtitle" id="subtitle">
+                            字幕:
                         </div>
                     </div>
                 </div>
