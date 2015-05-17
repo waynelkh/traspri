@@ -73,11 +73,30 @@ var langs =
 for (var i = 0; i < langs.length; i++) {
   select_language.options[i] = new Option(langs[i][0], i);
 }
-select_language.selectedIndex = 7;
+/*
+en = 7
+zh = 36
+*/
+select_language.selectedIndex = 7;//en
 updateCountry();
 select_dialect.selectedIndex = 6;
 
 function updateCountry() {
+  tmp = document.getElementById("select_language").value;
+  if(tmp == 7)
+  {
+        currentGoogle = "en";
+        currentBing = "en";
+        toGoogle = 'en';
+        toBing = 'en';
+  }
+  else
+  {
+        currentGoogle = "zh-TW";
+        currentBing = "zh-CHT";
+        toGoogle = 'zh-TW';
+        toBing = 'zh-CHT';
+  }
   for (var i = select_dialect.options.length - 1; i >= 0; i--) {
     select_dialect.remove(i);
   }

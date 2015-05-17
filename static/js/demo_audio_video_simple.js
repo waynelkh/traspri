@@ -2,6 +2,11 @@
 put all in "/Users/guang/Documents/PROJECT/hacthon_nodejs/easyrtc/server_example/node_modules/easyrtc/demos"
 and js in demo/js
 */
+var currentGoogle='en'; 
+var currentBing='en';
+var toGoogle = 'zh-TW';    
+var toBing = 'zh-CHT';
+
 var selfEasyrtcid = "";
 var targetId = '';
 function connect() {
@@ -14,8 +19,21 @@ function connect() {
         {
             traslationSpeech();
             targetId = id;
-        }else{
-            traslation('zh-CHT', 'en', data, function(td){
+        }
+        else if( type === "control" && data === "en")
+        {
+            currentBing = "en";
+            console.log("對方講的是英文");
+        }
+        else if( type === "control" && data === "zh-TW")
+        {
+            currentBing = "zh-CHT";
+            console.log("對方講的是中文");
+        }
+        else{
+            console.log("對方講的是=>"+currentBing+",我要聽的是"+toBing);
+            console.log(currentBing+","+toBing);
+            traslation(currentBing, toBing, data, function(td){
                 document.getElementById('subtitle').innerHTML += td + '. ';
                 say(td);
             });
@@ -47,6 +65,8 @@ function convertListToButtons (roomName, data, isPrimary) {
         onlineLink.onclick = function(){
             performCall(easyrtcid);
             easyrtc.sendDataWS(targetId, "control",  "start");
+            //easyrtc.sendDataWS(targetId, "control",  currentGoogle);
+
         };
         otherClientsA.appendChild(onlineLink);
     }
@@ -68,13 +88,14 @@ function traslationSpeech (){
     console.log("-----轉換語音-----");
     var speech = new AudioListener();
 
-    speech.listen("zh-TW", function(text) {
+    speech.listen(currentGoogle, function(text) {
         subtitle(text);
     });
 
 }
 
 function subtitle (data) {
+    easyrtc.sendDataWS(targetId, "control",  currentGoogle);
     easyrtc.sendDataWS(targetId, "message",  data);
 }
 
@@ -96,7 +117,7 @@ function say (mes) {
     SpeechUtil.rate = 0.8; // 0.1 to 10
     SpeechUtil.pitch = 2;  //0 to 2
     SpeechUtil.text = mes;
-    SpeechUtil.lang = 'zh-TW';
+    SpeechUtil.lang = currentGoogle;
 
     SpeechUtil.onend = function(e) {
       console.log('Finished in ' + event.elapsedTime + ' seconds.');
