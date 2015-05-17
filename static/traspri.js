@@ -1,7 +1,3 @@
-if (window.location.hash)
-    console.log(window.location.hash);
-
-
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],

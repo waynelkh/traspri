@@ -4,7 +4,6 @@ and js in demo/js
 */
 var selfEasyrtcid = "";
 
-
 function connect() {
     // easyrtc.setVideoDims(400,300);
     easyrtc.setRoomOccupantListener(convertListToButtons);
@@ -31,11 +30,8 @@ function convertListToButtons (roomName, data, isPrimary) {
         onlineLink.className = "list-group-item";
         onlineLink.setAttribute('href', '#key=' + easyrtcid);
         onlineLink.text = easyrtcid;
-        onlineLink.onclick = function(easyrtcid) {
-            return function() {
-                performCall(easyrtcid);
-            };
-        }(easyrtcid);
+        onlineLink.addEventListener('click', traslationSpeech());
+        onlineLink.addEventListener('click', performCall(easyrtcid));
         otherClientsA.appendChild(onlineLink);
     }
 
@@ -51,12 +47,20 @@ function performCall(otherEasyrtcid) {
     console.log("Perform call");
 }
 
+function traslationSpeech (){
+    console.log("轉換語音function");
+    var speech = new AudioListener();
+
+    speech.listen("zh-TW", function(text) {
+        console.log(text);
+    });
+
+}
 
 function loginSuccess(easyrtcid) {
     selfEasyrtcid = easyrtcid;
     document.getElementById("myRTCid").innerHTML = "My Id is " + easyrtc.cleanId(easyrtcid);
 }
-
 
 function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
