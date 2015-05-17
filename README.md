@@ -15,4 +15,16 @@ Example:
  - Send the url to target user
  - Target user acess the url and join connect the hash id user
  - default language and translate language
+
+Flow chart:  
+ - #########First USER JOIN#########
+ - First user connect to website
+ - Generate the room name "x" for this session
+ - First user using "x" to join the room
+ - First user tell Secoind the room name "x"
+ - #########SECOND USER JOIN#########
+ - Second user connect website with hash tag(which is the room name "x")
+ - Second user then using the room name "x" to join the room
+ - Start the video conference
+ 
  
