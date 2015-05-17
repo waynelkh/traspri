@@ -2,6 +2,21 @@
 ### Author : gyzheng, wnlee, chihhsin, yawchen
 Real-time translation tool
 
+### Installation Guide (Docker)
+
+Build the docker image from scratch:
+
+1. `git clone https://github.com/waynelkh/traspri.git`
+2. `cd traspri/ && git checkout docker`
+3. `docker build -t traspri .`
+4. `docker run -d -p 8080:8080 traspri`
+
+Pull the docker image from Docker Hub:
+
+1. `docker run -d -p 8080:8080 starbops/traspri`
+
+Open your browser and enter to `http://<server_ip>:8080`, happy traspring!
+
 ### Setup webRTC for video comunacation
 ### User web speech API to translate the voice to text
 ### Use translate API to translate text from source language to target language
